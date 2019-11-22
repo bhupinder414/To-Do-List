@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>to-do-list</title>
+    <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 7px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+  </head>
+  <body bgcolor="#88ff8f">
+    <h2 style="text-align:center; font-size:50px;">TO-DO-LIST</h2>
+    <center><input  type="text" id="text_box" placeholder="Enter Text"></center><br>
+    <center><button class="button button1" id="btn">Submit</center><br>
+<div id="div1" style="text-align:center; ">
+</div>
+<script>
+  var e=document.getElementById('text_box');
+  var e1=document.getElementById('btn');
+  e1.addEventListener('click',Click1);
+  function Click1()
+  {
+    var e3=document.getElementById('div1');
+    var e4=document.createElement('div');
+    var e5=document.createElement('p');
+    var e6=document.createElement('button');
+    e6.setAttribute('class','button button1');
+    e6.setAttribute('id','del');
+    e6.textContent='Delete';
+    e5.textContent=e.value;
+    e4.appendChild(e5);
+    e4.appendChild(e6);
+    e3.appendChild(e4);
+    document.body.appendChild(e3);
+  }
+</script>
+  </body>
+</html>
