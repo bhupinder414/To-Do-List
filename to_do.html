@@ -16,6 +16,25 @@
   margin: 4px 2px;
 }
 
+.hi
+{
+  padding:5px;
+}
+p
+{
+  padding:10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.ss
+{
+  height:auto;
+  width:300px;
+  margin: 20px 100px 20px 600px;
+  padding:10px;
+  background-color:rgb(250, 243, 234);
+}
+
 .button1 {
   background-color: white;
   color: black;
@@ -30,9 +49,9 @@
   </head>
   <body bgcolor="#88ff8f">
     <h2 style="text-align:center; font-size:50px;">TO-DO-LIST</h2>
+<div align="center" id="div1" class="ss">
     <center><input  type="text" id="text_box" placeholder="Enter Text"></center><br>
     <center><button class="button button1" id="btn">Submit</center><br>
-<div id="div1" style="text-align:center; ">
 </div>
 <script>
   var e=document.getElementById('text_box');
@@ -44,8 +63,8 @@
     var e4=document.createElement('div');
     var e5=document.createElement('p');
     var e6=document.createElement('button');
-    e6.setAttribute('class','button button1');
-    e6.setAttribute('id','del');
+    e6.setAttribute('class','button button1 hi');
+    e6.addEventListener('click',delete1)
     e6.textContent='Delete';
     e5.textContent=e.value;
     e4.appendChild(e5);
@@ -53,6 +72,18 @@
     e3.appendChild(e4);
     document.body.appendChild(e3);
   }
+
+function delete1()
+{
+  var close = document.getElementsByClassName("hi");
+   var i;
+  for (i = 0; i < close.length; i++) 
+  {
+  close[i].onclick = function(){
+  this.parentElement.style.display = "none";
+  }
+  }
+}
 </script>
-  </body>
+</body>
 </html>
